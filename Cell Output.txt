@@ -1,0 +1,224 @@
+﻿Cell Output
+
+
+Raw counts: 375 plants x 15346 genes
+Genotypes: 322 samples x 23706 marker genes; missing 0.3%
+Sample labels: 320 from genotype key (85 differ from RNA metadata, mostly plate PN3); 43 from metadata; 12 PN3 samples dropped (unverifiable)
+RIL plants kept: 288 from 214 lines
+Genotype matrix: 201 of 214 lines genotyped; mean PT fraction 0.218 (BC1S5 expectation 0.25)
+Genes mapped to markers: 10720 are markers, 4539 use nearest marker, 2 unmapped
+Genes kept: 15261; line-level expression (214, 15261)
+Line-level trait Spearman:
+       antho  necro  wilt
+antho   1.00  -0.17  0.27
+necro  -0.17   1.00  0.06
+wilt    0.27   0.06  1.00
+ID map: 27,149 strict 1:1 v4->v5 pairs
+mGRN leaf: 313,591 edges, 1,100 TFs
+  after v4->v5: 228,817 edges, 949 TFs
+  after expressed-gene filter: 96,263 edges, 423 TFs, 10,985 targets
+  testable in genotype mode: kept 417 of 423 TFs, 95,203 edges (used for both modes)
+=== seed 0: building graph
+  train: 285 TFs, 66,072 positives, 330,360 negatives
+  val: 45 TFs, 9,648 positives, 9,648 negatives
+  test: 87 TFs, 19,483 positives, 19,483 negatives
+  reverse edges dropped (reciprocal pair held out): 432
+  leakage checks passed
+  [genotype      | composite | full         | seed 0] test AUROC 0.823 AUPRC 0.825 EPR 1.51 (400 ep, 25s)
+    Delta: 95,203 edges; q<0.05: 1; above null 99th pct: 1,231 (chance ~952); vs |b3| Spearman 0.099
+  [genotype      | composite | mlp_no_graph | seed 0] test AUROC 0.732 AUPRC 0.724 EPR 1.34 (188 ep, 5s)
+  [genotype      | composite | no_edge_feat | seed 0] test AUROC 0.824 AUPRC 0.826 EPR 1.51 (400 ep, 19s)
+  [genotype      | composite | b1_only      | seed 0] test AUROC 0.822 AUPRC 0.824 EPR 1.51 (400 ep, 19s)
+  [genotype      | composite | t_feature    | seed 0] test AUROC 0.820 AUPRC 0.821 EPR 1.51 (391 ep, 19s)
+  [genotype      | composite | is_tf_only   | seed 0] test AUROC 0.494 AUPRC 0.497 EPR 1.00 (78 ep, 4s)
+  [genotype      | composite | no_is_tf     | seed 0] test AUROC 0.838 AUPRC 0.834 EPR 1.53 (328 ep, 16s)
+  [genotype      | composite | random_graph | seed 0] test AUROC 0.743 AUPRC 0.736 EPR 1.36 (318 ep, 15s)
+  [tf_expression | composite | full         | seed 0] test AUROC 0.823 AUPRC 0.824 EPR 1.51 (378 ep, 18s)
+    Delta: 95,203 edges; q<0.05: 0; above null 99th pct: 1,118 (chance ~952); vs |b3| Spearman 0.305
+  [tf_expression | composite | mlp_no_graph | seed 0] test AUROC 0.750 AUPRC 0.741 EPR 1.37 (296 ep, 8s)
+  [tf_expression | composite | no_edge_feat | seed 0] test AUROC 0.821 AUPRC 0.823 EPR 1.51 (378 ep, 18s)
+  [tf_expression | composite | b1_only      | seed 0] test AUROC 0.823 AUPRC 0.824 EPR 1.51 (378 ep, 18s)
+  [tf_expression | composite | t_feature    | seed 0] test AUROC 0.821 AUPRC 0.821 EPR 1.50 (390 ep, 19s)
+  [tf_expression | composite | is_tf_only   | seed 0] test AUROC 0.634 AUPRC 0.632 EPR 1.19 (36 ep, 2s)
+  [tf_expression | composite | no_is_tf     | seed 0] test AUROC 0.836 AUPRC 0.833 EPR 1.53 (400 ep, 19s)
+  [tf_expression | composite | random_graph | seed 0] test AUROC 0.741 AUPRC 0.732 EPR 1.35 (261 ep, 12s)
+=== seed 1: building graph
+  train: 288 TFs, 66,266 positives, 331,330 negatives
+  val: 37 TFs, 9,354 positives, 9,354 negatives
+  test: 92 TFs, 19,583 positives, 19,583 negatives
+  reverse edges dropped (reciprocal pair held out): 422
+  leakage checks passed
+  [genotype      | composite | full         | seed 1] test AUROC 0.846 AUPRC 0.835 EPR 1.54 (209 ep, 10s)
+    Delta: 95,203 edges; q<0.05: 0; above null 99th pct: 1,247 (chance ~952); vs |b3| Spearman 0.096
+  [genotype      | composite | mlp_no_graph | seed 1] test AUROC 0.753 AUPRC 0.742 EPR 1.38 (400 ep, 10s)
+  [genotype      | composite | no_edge_feat | seed 1] test AUROC 0.846 AUPRC 0.835 EPR 1.54 (209 ep, 10s)
+  [genotype      | composite | b1_only      | seed 1] test AUROC 0.846 AUPRC 0.835 EPR 1.54 (209 ep, 10s)
+  [genotype      | composite | t_feature    | seed 1] test AUROC 0.850 AUPRC 0.840 EPR 1.55 (293 ep, 14s)
+  [genotype      | composite | is_tf_only   | seed 1] test AUROC 0.520 AUPRC 0.524 EPR 1.03 (33 ep, 2s)
+  [genotype      | composite | no_is_tf     | seed 1] test AUROC 0.851 AUPRC 0.843 EPR 1.56 (302 ep, 14s)
+  [genotype      | composite | random_graph | seed 1] test AUROC 0.750 AUPRC 0.738 EPR 1.37 (270 ep, 13s)
+  [tf_expression | composite | full         | seed 1] test AUROC 0.851 AUPRC 0.841 EPR 1.56 (317 ep, 15s)
+    Delta: 95,203 edges; q<0.05: 0; above null 99th pct: 1,105 (chance ~952); vs |b3| Spearman 0.273
+  [tf_expression | composite | mlp_no_graph | seed 1] test AUROC 0.757 AUPRC 0.744 EPR 1.38 (400 ep, 10s)
+  [tf_expression | composite | no_edge_feat | seed 1] test AUROC 0.846 AUPRC 0.835 EPR 1.54 (209 ep, 10s)
+  [tf_expression | composite | b1_only      | seed 1] test AUROC 0.851 AUPRC 0.841 EPR 1.56 (317 ep, 15s)
+  [tf_expression | composite | t_feature    | seed 1] test AUROC 0.846 AUPRC 0.836 EPR 1.54 (232 ep, 11s)
+  [tf_expression | composite | is_tf_only   | seed 1] test AUROC 0.653 AUPRC 0.647 EPR 1.21 (52 ep, 3s)
+  [tf_expression | composite | no_is_tf     | seed 1] test AUROC 0.855 AUPRC 0.847 EPR 1.56 (303 ep, 15s)
+  [tf_expression | composite | random_graph | seed 1] test AUROC 0.751 AUPRC 0.738 EPR 1.38 (262 ep, 13s)
+=== seed 2: building graph
+  train: 285 TFs, 66,284 positives, 331,420 negatives
+  val: 43 TFs, 9,247 positives, 9,247 negatives
+  test: 89 TFs, 19,672 positives, 19,672 negatives
+  reverse edges dropped (reciprocal pair held out): 445
+  leakage checks passed
+  [genotype      | composite | full         | seed 2] test AUROC 0.857 AUPRC 0.850 EPR 1.57 (372 ep, 18s)
+    Delta: 95,203 edges; q<0.05: 0; above null 99th pct: 1,074 (chance ~952); vs |b3| Spearman 0.060
+  [genotype      | composite | mlp_no_graph | seed 2] test AUROC 0.737 AUPRC 0.724 EPR 1.35 (187 ep, 5s)
+  [genotype      | composite | no_edge_feat | seed 2] test AUROC 0.857 AUPRC 0.850 EPR 1.56 (372 ep, 17s)
+  [genotype      | composite | b1_only      | seed 2] test AUROC 0.857 AUPRC 0.849 EPR 1.57 (339 ep, 16s)
+  [genotype      | composite | t_feature    | seed 2] test AUROC 0.860 AUPRC 0.850 EPR 1.57 (339 ep, 16s)
+  [genotype      | composite | is_tf_only   | seed 2] test AUROC 0.504 AUPRC 0.507 EPR 1.01 (32 ep, 2s)
+  [genotype      | composite | no_is_tf     | seed 2] test AUROC 0.854 AUPRC 0.848 EPR 1.56 (377 ep, 18s)
+  [genotype      | composite | random_graph | seed 2] test AUROC 0.741 AUPRC 0.727 EPR 1.35 (187 ep, 9s)
+  [tf_expression | composite | full         | seed 2] test AUROC 0.857 AUPRC 0.851 EPR 1.57 (400 ep, 19s)
+    Delta: 95,203 edges; q<0.05: 0; above null 99th pct: 1,088 (chance ~952); vs |b3| Spearman 0.286
+  [tf_expression | composite | mlp_no_graph | seed 2] test AUROC 0.745 AUPRC 0.731 EPR 1.36 (248 ep, 6s)
+  [tf_expression | composite | no_edge_feat | seed 2] test AUROC 0.857 AUPRC 0.850 EPR 1.56 (372 ep, 18s)
+  [tf_expression | composite | b1_only      | seed 2] test AUROC 0.857 AUPRC 0.851 EPR 1.57 (400 ep, 19s)
+  [tf_expression | composite | t_feature    | seed 2] test AUROC 0.860 AUPRC 0.851 EPR 1.57 (376 ep, 18s)
+  [tf_expression | composite | is_tf_only   | seed 2] test AUROC 0.638 AUPRC 0.640 EPR 1.19 (34 ep, 2s)
+  [tf_expression | composite | no_is_tf     | seed 2] test AUROC 0.857 AUPRC 0.852 EPR 1.56 (400 ep, 19s)
+  [tf_expression | composite | random_graph | seed 2] test AUROC 0.735 AUPRC 0.722 EPR 1.34 (170 ep, 8s)
+                                     test_auroc        test_auprc         \
+                                           mean    std       mean    std   
+z_mode        condition variant                                            
+genotype      composite b1_only           0.842  0.018      0.836  0.012   
+                        full              0.842  0.018      0.837  0.013   
+                        is_tf_only        0.506  0.013      0.509  0.014   
+                        mlp_no_graph      0.741  0.011      0.730  0.010   
+                        no_edge_feat      0.842  0.017      0.837  0.012   
+                        no_is_tf          0.848  0.009      0.842  0.008   
+                        random_graph      0.745  0.005      0.734  0.006   
+                        t_feature         0.843  0.021      0.837  0.015   
+tf_expression composite b1_only           0.844  0.018      0.839  0.014   
+                        full              0.843  0.018      0.838  0.014   
+                        is_tf_only        0.641  0.010      0.640  0.008   
+                        mlp_no_graph      0.751  0.006      0.739  0.007   
+                        no_edge_feat      0.841  0.018      0.836  0.014   
+                        no_is_tf          0.850  0.012      0.844  0.010   
+                        random_graph      0.742  0.008      0.731  0.008   
+                        t_feature         0.842  0.020      0.836  0.015   
+
+
+                                     test_epr         
+                                         mean    std  
+z_mode        condition variant                       
+genotype      composite b1_only         1.539  0.027  
+                        full            1.539  0.027  
+                        is_tf_only      1.012  0.013  
+                        mlp_no_graph    1.357  0.021  
+                        no_edge_feat    1.540  0.026  
+                        no_is_tf        1.550  0.019  
+                        random_graph    1.359  0.012  
+                        t_feature       1.543  0.032  
+tf_expression composite b1_only         1.545  0.029  
+                        full            1.545  0.030  
+                        is_tf_only      1.199  0.012  
+                        mlp_no_graph    1.370  0.010  
+                        no_edge_feat    1.538  0.028  
+                        no_is_tf        1.552  0.021  
+                        random_graph    1.356  0.018  
+                        t_feature       1.538  0.033  
+                        q_lt_0.05         above_null_p99           \
+                             mean     std           mean      std   
+z_mode        condition                                             
+genotype      composite    0.3333  0.5774      1184.0000  95.5981   
+tf_expression composite    0.0000  0.0000      1103.6667  15.0444   
+
+
+                        expected_p99      median_abs_delta          \
+                                mean  std             mean     std   
+z_mode        condition                                              
+genotype      composite        952.0  0.0           0.0013  0.0002   
+tf_expression composite        952.0  0.0           0.0056  0.0008   
+
+
+                        spearman_vs_b3          
+                                  mean     std  
+z_mode        condition                         
+genotype      composite         0.0848  0.0218  
+tf_expression composite         0.2881  0.0161  
+Raw counts: 375 plants x 15346 genes
+Genotypes: 322 samples x 23706 marker genes; missing 0.3%
+Sample labels: 320 from genotype key (85 differ from RNA metadata, mostly plate PN3); 43 from metadata; 12 PN3 samples dropped (unverifiable)
+RIL plants kept: 288 from 214 lines
+Genotype matrix: 201 of 214 lines genotyped; mean PT fraction 0.218 (BC1S5 expectation 0.25)
+Genes mapped to markers: 10720 are markers, 4539 use nearest marker, 2 unmapped
+Genes kept: 15261; line-level expression (214, 15261)
+Line-level trait Spearman:
+       antho  necro  wilt
+antho   1.00  -0.17  0.27
+necro  -0.17   1.00  0.06
+wilt    0.27   0.06  1.00
+ID map: 27,149 strict 1:1 v4->v5 pairs
+mGRN leaf: 313,591 edges, 1,100 TFs
+  after v4->v5: 228,817 edges, 949 TFs
+  after expressed-gene filter: 96,263 edges, 423 TFs, 10,985 targets
+  testable in genotype mode: kept 417 of 423 TFs, 95,203 edges (used for both modes)
+SERGIO subnetwork: 456 genes, 55 TFs (33 master regulators), 1106 edges, 99 differential
+  SERGIO group 1/5: 43 lines, mean P -1.42
+  SERGIO group 2/5: 43 lines, mean P -0.58
+  SERGIO group 3/5: 42 lines, mean P +0.03
+  SERGIO group 4/5: 43 lines, mean P +0.60
+  SERGIO group 5/5: 43 lines, mean P +1.37
+  train: 37 TFs, 743 positives, 3,715 negatives
+  val: 5 TFs, 119 positives, 119 negatives
+  test: 13 TFs, 244 positives, 244 negatives
+  reverse edges dropped (reciprocal pair held out): 0
+  leakage checks passed
+  [SIM genotype      | seed 0] link AUROC 0.653 | differential-edge AUROC: Delta 0.498, |t(b3)| 0.519 | AUPRC: Delta 0.096, |t(b3)| 0.099 (chance 0.090)
+  [SIM tf_expression | seed 0] link AUROC 0.659 | differential-edge AUROC: Delta 0.704, |t(b3)| 0.752 | AUPRC: Delta 0.189, |t(b3)| 0.291 (chance 0.090)
+  train: 35 TFs, 724 positives, 3,620 negatives
+  val: 6 TFs, 125 positives, 125 negatives
+  test: 14 TFs, 257 positives, 257 negatives
+  reverse edges dropped (reciprocal pair held out): 0
+  leakage checks passed
+  [SIM genotype      | seed 1] link AUROC 0.718 | differential-edge AUROC: Delta 0.505, |t(b3)| 0.519 | AUPRC: Delta 0.098, |t(b3)| 0.099 (chance 0.090)
+  [SIM tf_expression | seed 1] link AUROC 0.716 | differential-edge AUROC: Delta 0.663, |t(b3)| 0.752 | AUPRC: Delta 0.191, |t(b3)| 0.291 (chance 0.090)
+  train: 37 TFs, 732 positives, 3,660 negatives
+  val: 6 TFs, 135 positives, 135 negatives
+  test: 12 TFs, 239 positives, 239 negatives
+  reverse edges dropped (reciprocal pair held out): 0
+  leakage checks passed
+  [SIM genotype      | seed 2] link AUROC 0.733 | differential-edge AUROC: Delta 0.527, |t(b3)| 0.519 | AUPRC: Delta 0.110, |t(b3)| 0.099 (chance 0.090)
+  [SIM tf_expression | seed 2] link AUROC 0.736 | differential-edge AUROC: Delta 0.642, |t(b3)| 0.752 | AUPRC: Delta 0.190, |t(b3)| 0.291 (chance 0.090)
+              seed      linkpred_test_auroc        linkpred_test_auprc         \
+              mean  std                mean    std                mean    std   
+z_mode                                                                          
+genotype       1.0  1.0               0.702  0.042               0.713  0.036   
+tf_expression  1.0  1.0               0.704  0.040               0.721  0.031   
+
+
+              n_edges      n_differential       ... abs_t_b3_auroc       \
+                 mean  std           mean  std  ...           mean  std   
+z_mode                                          ...                       
+genotype       1106.0  0.0           99.0  0.0  ...          0.519  0.0   
+tf_expression  1106.0  0.0           99.0  0.0  ...          0.752  0.0   
+
+
+              abs_t_b3_auprc      auprc_chance      delta_q05_hits       \
+                        mean  std         mean  std           mean  std   
+z_mode                                                                    
+genotype               0.099  0.0         0.09  0.0            0.0  0.0   
+tf_expression          0.291  0.0         0.09  0.0            0.0  0.0   
+
+
+              delta_q05_total       
+                         mean  std  
+z_mode                              
+genotype                  0.0  0.0  
+tf_expression             0.0  0.0  
+
+
+[2 rows x 24 columns]

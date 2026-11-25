@@ -127,7 +127,7 @@ All functions are in `gnn_diffgrn_pipeline.py`, in the following sections.
 |---|---|
 | `mean_aggregate` | Mean of incoming messages per node |
 | `EdgeConv` | Edge-conditioned message-passing layer: message = MLP(neighbor embedding ‖ edge feature ‖ direction) |
-| `DiffGRN` | Input layer (219 → 64), two `EdgeConv` layers with residuals + LayerNorm, MLP decoder on [h_TF, h_target, h_TF ⊙ h_target, e] |
+| `DiffGRN` | Input layer (215 → 64), two `EdgeConv` layers with residuals + LayerNorm, MLP decoder on [h_TF, h_target, h_TF ⊙ h_target, e] |
 
 ### 7. Training and evaluation
 | Name | Purpose |
